@@ -7,6 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.custom-button {
+  background-color: #6c757d;
+  color: black;
+}
+
+.custom-button:hover {
+  background-color: #adb5bd; /* Lighter shade on hover */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
