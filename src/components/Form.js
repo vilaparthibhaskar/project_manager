@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useRef } from "react"
+import { useRef } from "react"
 
 export default function Form({setProjects, setMode, setCurrent}){
 
@@ -20,7 +20,7 @@ export default function Form({setProjects, setMode, setCurrent}){
             'tasks': []
         }
 
-        if(Title.length == 0 || Description.length == 0 || Date.length == 0){
+        if(Title.length === 0 || Description.length === 0 || Date.length === 0){
             return
         }
         setProjects((projects) => {

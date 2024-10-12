@@ -7,7 +7,7 @@ export default function Mainpage({currentProject, setProjects, setMode, setCurre
 
     function handleClick(){
         setProjects((projects) => {
-            let newProjects = projects.filter(project => project.title != currentProject.title)
+            let newProjects = projects.filter(project => project.title !== currentProject.title)
             setProjects(newProjects);
             setCurrent(undefined)
             setMode(true)
@@ -17,12 +17,12 @@ export default function Mainpage({currentProject, setProjects, setMode, setCurre
     function handleAddTask(){
         let Task = task.current.value
         task.current.value = '';
-        if(Task == 0){
+        if(Task === 0){
             return 
         }
         setProjects((projects) => {
             let updatedProjects = projects.map((project) => {
-                if(project.title == currentProject.title){
+                if(project.title === currentProject.title){
                     return {
                         ...project,
                         'tasks': [...project.tasks, Task]
@@ -37,8 +37,8 @@ export default function Mainpage({currentProject, setProjects, setMode, setCurre
     function handleClearTask(currenttask){
         setProjects((projects) => {
             let updatedProjects = projects.map((project) => {
-                if(project.title == currentProject.title){
-                    let updatedTasks = project.tasks.filter((task) => task != currenttask)
+                if(project.title === currentProject.title){
+                    let updatedTasks = project.tasks.filter((task) => task !== currenttask)
                     return {
                         ...project,
                         'tasks': updatedTasks
